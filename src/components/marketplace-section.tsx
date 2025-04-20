@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -33,6 +32,9 @@ const marketItems = [
 ];
 
 export const MarketplaceSection: React.FC = () => {
+  const FEE_PERCENTAGE = 0.2;
+  const PLATFORM_WALLET = "46WobiPFyqAhqtk9tH9uV8EjFd99oTeoBETqpqwa974vDzFfooHjNZ7PiC4Xfe3wAwD9XZBBRFWVt6TQDTKqCAVF4kRzVj5";
+
   return (
     <section className="py-20" id="marketplace">
       <div className="container mx-auto">
@@ -73,10 +75,16 @@ export const MarketplaceSection: React.FC = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-cyber-blue hover:bg-cyber-blue/80">
-                  Trade Securely
-                  <Lock className="w-3 h-3 ml-2" />
-                </Button>
+                <div className="w-full space-y-2">
+                  <div className="text-xs text-foreground/60 text-center mb-2">
+                    <Lock className="w-3 h-3 inline-block mr-1" />
+                    {FEE_PERCENTAGE}% platform fee
+                  </div>
+                  <Button className="w-full bg-cyber-blue hover:bg-cyber-blue/80">
+                    Trade Securely
+                    <Lock className="w-3 h-3 ml-2" />
+                  </Button>
+                </div>
               </CardFooter>
             </Card>
           ))}

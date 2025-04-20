@@ -1,13 +1,14 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Wallet, Shield, Lock, Eye, ArrowUpRight } from "lucide-react";
 
 export const WalletSection: React.FC = () => {
+  const FEE_PERCENTAGE = 0.2;
+  const PLATFORM_WALLET = "46WobiPFyqAhqtk9tH9uV8EjFd99oTeoBETqpqwa974vDzFfooHjNZ7PiC4Xfe3wAwD9XZBBRFWVt6TQDTKqCAVF4kRzVj5";
+
   return (
     <section className="py-20 relative" id="wallet">
-      {/* Background elements */}
       <div className="absolute w-96 h-96 rounded-full bg-cyber-blue/10 filter blur-3xl top-20 right-20 animate-float"></div>
       
       <div className="container mx-auto">
@@ -61,10 +62,13 @@ export const WalletSection: React.FC = () => {
                 ))}
               </div>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="flex flex-col space-y-2">
               <p className="text-xs text-foreground/40 italic">
                 <Lock className="inline w-3 h-3 mr-1" />
                 All private keys are stored locally and never leave your device
+              </p>
+              <p className="text-xs text-foreground/40">
+                Platform fee: {FEE_PERCENTAGE}% of transactions
               </p>
             </CardFooter>
           </Card>
