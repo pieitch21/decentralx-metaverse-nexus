@@ -61,6 +61,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				cyber: {
+					purple: '#b967ff',
+					blue: '#45a6ff',
+					teal: '#01ffc3',
+					pink: '#ff71ce',
+					yellow: '#f8e36f',
+					red: '#ff5757',
+					dark: '#121323',
+					darker: '#0b0c18',
+					light: '#2a2b44'
 				}
 			},
 			borderRadius: {
@@ -70,25 +81,43 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { opacity: '1', filter: 'brightness(1)' },
+					'50%': { opacity: '0.7', filter: 'brightness(0.8)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'cyber-grid-move': {
+					'0%': { backgroundPosition: '0 0' },
+					'100%': { backgroundPosition: '50px 50px' }
+				},
+				'flicker': {
+					'0%, 100%': { opacity: '1' },
+					'10%, 30%, 50%, 70%, 90%': { opacity: '0.9' },
+					'20%, 40%, 60%, 80%': { opacity: '0.8' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'float': 'float 4s ease-in-out infinite',
+				'cyber-grid-move': 'cyber-grid-move 2s linear infinite',
+				'flicker': 'flicker 2s linear infinite',
+				'spin-slow': 'spin-slow 8s linear infinite'
 			}
 		}
 	},

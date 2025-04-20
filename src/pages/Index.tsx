@@ -1,12 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/header";
+import { HeroSection } from "@/components/hero-section";
+import { PrinciplesSection } from "@/components/principles-section";
+import { MarketplaceSection } from "@/components/marketplace-section";
+import { WalletSection } from "@/components/wallet-section";
+import { GovernanceSection } from "@/components/governance-section";
+import { PrivacySection } from "@/components/privacy-section";
+import { AIAgentsSection } from "@/components/ai-agents-section";
+import { Footer } from "@/components/footer";
+import { AnimatedBackground } from "@/components/animated-background";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-cyber-darker text-foreground relative">
+      <AnimatedBackground />
+      <Header />
+      <main>
+        <HeroSection />
+        <PrinciplesSection />
+        <MarketplaceSection />
+        <WalletSection />
+        <GovernanceSection />
+        <PrivacySection />
+        <AIAgentsSection />
+      </main>
+      <Footer />
     </div>
   );
 };
